@@ -1,0 +1,222 @@
+:root{
+    font-size: 16x;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*----Main container----*/
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 3rem;
+}
+
+/*-----HEADER-----*/
+header{
+    background-color: aqua;
+    padding: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+#logo{
+    color: blue;
+    font-size: 3rem;
+}
+
+/*------MAIN-----*/
+main{
+    min-height: 90vh;
+}
+
+section{
+    background-color: cadetblue;
+    border:2xp solid #ccc;
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+#bank, #work, #laptop-selection{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 23%;
+    min-width: 250px;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.row{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.buttons-row{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: auto;
+    justify-content: space-between;
+}
+
+#bank h3, #work h3, #laptop-selection h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+#bank {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  #balance {
+    font-weight: bold;
+  }
+  
+  #outstanding-loan {
+    color: red;
+  }
+
+  #repay-loan-button {
+    display: none;
+  }
+  #repay-loan-button {
+    display: none;
+  }
+
+  /*---------laptop-selection-----*/
+#laptop-selection{
+    min-width: 30%;
+}
+
+fieldset{
+    border: 0;
+}
+
+/* #laptop-selection {
+    width: 80%;
+    margin: 0 auto;
+} */
+#laptop-select {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    
+}
+
+#laptop-selection p, #laptops-specs{
+    color: aquamarine;
+}
+
+#laptop-selection p{
+    font-weight: 500;
+}
+/* laptop information*/
+#laptop-info{
+    display: flex;
+    flex-flow: row nowrap;
+}
+/* #laptop-info {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+} */
+#laptop-image, #laptop-description, #buy-now-button {
+    display:flex;
+    flex-flow: column;
+}
+
+#laptop-description{
+    flex:2;
+}
+
+#laptop-description, #buy-now-button{
+    text-align: center;
+    line-height: 1.2;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+#laptop-description h1{
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+}
+#laptop-description p{
+    font-size: 1.5rem;
+}
+
+#buy-now-button, #laptop-image{
+    flex: 1; 
+}
+
+#laptop-image{
+    margin: 0 auto;
+    width: 10rem;
+    height: 10rem;
+}
+
+#buy-now-button{
+    text-align: center;
+    font-weight: 550;
+    font-size: 2.5rem;
+}
+/*-----Footer------*/
+footer{
+    width: 100%;
+    background-color: #2B2D42;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1rem;
+}
+
+/*------Utils-----*/
+.hidden{
+    display: none;
+}
+
+/*------Media queries----*/
+@media only screen and(max-width:810px){
+    #bank, #work{
+        width: 45%;
+    }
+
+    #laptop-selection{
+        width: 100%;
+    }
+
+    #laptop-info{
+        flex-direction: column;
+    }
+    
+    #laptop-description{
+        margin: 2rem 0;
+    }
+
+    #buy-now-button{
+        margin: 2rem 0;
+    }
+}
+
+@media only screen and(max-width:600px){
+    .flex-container{
+        justify-content: center;
+    }
+
+    #bank, #work, #laptop-info{
+        width: 100%;
+    }
+}

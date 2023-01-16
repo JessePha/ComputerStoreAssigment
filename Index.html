@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span id="logo">Computer Store</span>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div classs="flex-container">
+                <section id="bank">
+                    <h3>Joe Banker</h3>
+                    <div id="balance"></div>
+                    <div id="outstanding-loan"></div>
+                    <button id="get-loan-button">Get a loan</button>
+                    <!-- <button id="repay-loan-button">Repay loan</button> -->
+                </section>
+                <section id="work">
+                    <h3>Work</h3>
+                    <div id="pay"></div>
+                    <button id="work-button">Work</button>
+                    <button id="bank-button">Bank</button>
+                    <button id="repay-loan-button">Repay Loan</button>
+                </section>
+
+                <section id="laptop-selection">
+                    <h3>Laptop</h3>
+                    <fieldset>
+                        <label for="laptop-select">Features</label>
+                    </fieldset>
+                    <select id="laptop-select"></select>
+                    <ul id="laptop-features"></ul>
+                </section>
+
+
+            </div>
+            <section id="laptop-info">
+                <h3>Laptop Information</h3>
+                <img id="laptop-image" alt="Laptop image">
+                <h2 id="laptop-title"></h2>
+                <p id="laptop-description"></p>
+                <p id="laptop-price"></p>
+                <button id="buy-now-button">Buy Now</button>
+            </section>
+        </div>
+    </main>
+    <script src="App.js"></script>
+</body>
+</html>
