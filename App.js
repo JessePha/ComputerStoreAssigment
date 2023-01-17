@@ -1,8 +1,9 @@
 let bankBalance = 500;
 let outstandingLoan = 0;
+let pay = 0;
 let loanTaken = false;
 
-document.getElementById("balance").innerHTML = "Bank Balance: " + bankBalance;
+document.getElementById("bank-balance").innerHTML = "Bank Balance: " + bankBalance;
 document.getElementById("outstanding-loan").innerHTML = "Outstanding Loan: " + outstandingLoan;
 
 document.getElementById("get-loan-button").addEventListener("click", function() {
@@ -25,9 +26,6 @@ document.getElementById("get-loan-button").addEventListener("click", function() 
   document.getElementById("repay-loan-button").style.display = "block";
 });
 
-let pay = 0;
-
-
 document.getElementById("pay").innerHTML = "Pay: " + pay;
 
 document.getElementById("work-button").addEventListener("click", function() {
@@ -45,7 +43,7 @@ document.getElementById("bank-button").addEventListener("click", function() {
   bankBalance += pay;
   pay = 0;
   document.getElementById("pay").innerHTML = "Pay: " + pay;
-  document.getElementById("balance").innerHTML = "Bank Balance: " + bankBalance;
+  document.getElementById("bank-balance").innerHTML = "Bank Balance: " + bankBalance;
 });
 
 document.getElementById("repay-loan-button").addEventListener("click", function() {
@@ -72,20 +70,21 @@ fetch("https://hickory-quilled-actress.glitch.me/computers")
         // Add the laptops options to the select box
         data.forEach(laptop => {
             let option = document.createElement("option");
-            option.value = laptop.id;
+            option.value = laptop.id + 1;
             option.text = laptop.title;
             laptopSelect.appendChild(option);
         });
 
         // Display the features of the selected laptop
         laptopSelect.addEventListener("change", function() {
-        let selectedLaptopId = this.value -1;
+        let selectedLaptopId = this.value - 1;
         let selectedLaptop = data.find(laptop => laptop.id === selectedLaptopId);
         let laptopFeatures = document.getElementById("laptop-features");
-        laptopFeatures.innerHTML = selectedLaptop.specs;
-
+        // laptopFeatures.innerHTML = selectedLaptop.specs;
+        document.getElementById("laptop-price").innerHTML = selectedLaptop.price
         let featuresList = document.createElement("ul");
-        selectedLaptop.features.forEach(feature => {
+
+        selectedLaptop.specs.forEach(feature => {
             let listItem = document.createElement("li");
             listItem.textContent = feature;
             featuresList.appendChild(listItem);
@@ -94,28 +93,35 @@ fetch("https://hickory-quilled-actress.glitch.me/computers")
 
         // Update the info section with the selected laptop's data
         let laptopImage = document.getElementById("laptop-image");
+
+        console.log(selectedLaptop.image)
         
-        laptopImage.src = "https://hickory-quilled-actress.glitch.me" + selectedLaptop.image;
+        laptopImage.src = "https://hickory-quilled-actress.glitch.me/" + selectedLaptop.image;
         
-        let laptopName = document.getElementById("laptop-name");
-        laptopName.textContent = selectedLaptop.name;
+        let laptopName = document.getElementById("laptop-title");
+        laptopName.textContent = selectedLaptop.title;
 
         let laptopDescription = document.getElementById("laptop-description");
         laptopDescription.textContent = selectedLaptop.description;
 
         let laptopPrice = document.getElementById("laptop-price");
-        laptopPrice.textContent = "sek" + selectedLaptop.price;
-        
+        laptopPrice.textContent = selectedLaptop.price +"Sek";
+    
     });
-});
 
-let buyNowButton = document.getElementById("buy-now-button");
-buyNowButton.addEventListener("click", function() {
+    let buyNowButton = document.getElementById("buy-now-button");
+    buyNowButton.addEventListener("click", function() {
+ 
+    const price = Number(document.getElementById("laptop-price").innerHTML)
+    //let laptopImage = (document.getElementById("laptop-image").innerHTML)
+
     // Get the selected laptop's price
     let selectedLaptopId = document.getElementById("laptop-select").value;
+    //console.log(selectedLaptopId)
     let selectedLaptop = data.find(laptop => laptop.id === selectedLaptopId);
-    let laptopPrice = selectedLaptop.price;
+    let laptopPrice = Number(price);
 
+   
     // Get the current bank balance
     let bankBalance = parseFloat(document.getElementById("bank-balance").textContent);
 
@@ -127,9 +133,13 @@ buyNowButton.addEventListener("click", function() {
         bankBalance -= laptopPrice;
         document.getElementById("bank-balance").textContent = bankBalance;
 
-        alert("Congratulations! You are now the owner of a new " + selectedLaptop.name + " laptop.");
+        alert("Congratulations! You are now the owner of a new " + /*selectedLaptop.laptopName*/ + " laptop.");
     }
 });
+
+});
+
+
 
 
 
