@@ -1,7 +1,10 @@
+
 let bankBalance = 500;
 let outstandingLoan = 0;
 let pay = 0;
 let loanTaken = false;
+
+const laptopName = document.getElementById("laptop-title");
 
 document.getElementById("bank-balance").innerHTML = "Bank Balance: " + bankBalance;
 document.getElementById("outstanding-loan").innerHTML = "Outstanding Loan: " + outstandingLoan;
@@ -25,6 +28,19 @@ document.getElementById("get-loan-button").addEventListener("click", function() 
   document.getElementById("outstanding-loan").innerHTML = "Outstanding Loan: " + outstandingLoan;
   document.getElementById("repay-loan-button").style.display = "block";
 });
+
+// document.getElementById("repay-loan-button").addEventListener("click", function() {
+//   if (outstandingLoan > bankBalance) {
+//     alert("You do not have enough funds to repay the loan");
+//     return;
+//   }
+//   bankBalance -= outstandingLoan;
+//   outstandingLoan = 0;
+//   loanTaken = false;
+//   document.getElementById("bank-balance").innerHTML = "Bank Balance: " + bankBalance;
+//   document.getElementById("outstanding-loan").innerHTML = "Outstanding Loan: " + outstandingLoan;
+//   document.getElementById("repay-loan-button").style.display = "none";
+// });
 
 document.getElementById("pay").innerHTML = "Pay: " + pay;
 
@@ -98,7 +114,7 @@ fetch("https://hickory-quilled-actress.glitch.me/computers")
         
         laptopImage.src = "https://hickory-quilled-actress.glitch.me/" + selectedLaptop.image;
         
-        let laptopName = document.getElementById("laptop-title");
+        //let laptopName = document.getElementById("laptop-title");
         laptopName.textContent = selectedLaptop.title;
 
         let laptopDescription = document.getElementById("laptop-description");
@@ -128,12 +144,12 @@ fetch("https://hickory-quilled-actress.glitch.me/computers")
     // Check if the bank balance is sufficient to purchase the laptop
     if (laptopPrice > bankBalance) {
         alert("You cannot afford this laptop.");
-    } else {
+    } else if(bankBalance > laptopPrice) {
         // Deduct the laptop price from the bank balance
         bankBalance -= laptopPrice;
         document.getElementById("bank-balance").textContent = bankBalance;
-
-        alert("Congratulations! You are now the owner of a new " + /*selectedLaptop.laptopName*/ + " laptop.");
+        console.log("balance",bankBalance)
+        alert("Congratulations! You are now the owner of a new " + selectedLaptop.title + " laptop.");
     }
 });
 

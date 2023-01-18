@@ -11,7 +11,7 @@
 
 /*----Main container----*/
 .container{
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
     padding: 0 3rem;
 }
@@ -170,8 +170,8 @@ fieldset{
 
 #buy-now-button{
     text-align: center;
-    font-weight: 500;
-    font-size: 2.5rem;
+    font-weight: 300;
+    font-size: 1.5rem;
 }
 /*-----Footer------*/
 footer{
@@ -207,7 +207,7 @@ footer{
     }
 
     #buy-now-button{
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
 }
 
