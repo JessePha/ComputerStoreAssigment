@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computer Store</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <span id="logo">Computer Store</span>
-        </div>
-    </header>
-    <main>
-        <div class="container">
-            <div classs="flex-container">
-                <section id="bank">
-                    <h3>Joe Banker</h3>
-                    <div id="bank-balance">balance</div>
-                    <div id="outstanding-loan"></div>
-                    <button href="#" id="get-loan-button">Get a loan</button>
-                    <!-- <div>
-                        <button id="repay-loan-button" class="row hidden">Repay loan</button>
-                    </div> -->
-                </section>
-
-                <section id="work">
-                    <h3>Work</h3>
-                    <div id="pay"></div>
-                    <button href="#" id="work-button">Work</button>
-                    <button href="#" id="bank-button">Bank</button>
-                    <button href="#" id="repay-loan-button">Repay Loan</button>
-                </section>
-
-                <section id="laptops">
-                    <h3>Laptops</h3>
-                    <fieldset>
-                        <label for="laptop-select">Features</label>
-                    </fieldset>
-                    <select id="laptop-select"></select>
-                    <ul id="laptop-features"></ul>
-                </section>
-            </div>
-            <section id="laptop-info">
-                <!-- <h3>Laptop Information</h3> -->
-                <img src="" id="laptop-image" alt="Laptop image">
-                <h2 id="laptop-title"></h2>
-                <p id="laptop-description"></p>
-                <p id="laptop-price"></p>
-                <button href="#" id="buy-now-button">Buy Now</button>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <div class="container">
+            <a href=""><span id="logo">Computer Store</span></a>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="main-container">
+          <div class="flex-container">
+            <section id="bank" class="inner-container container-border-radius">
+              <h3>Joe Banker</h3>
+              <div class="subtext-container">
+                <p id="bank-balance"><span>balance</span></p>
+                <div><span id="outstanding-loan"></span></div>
+              </div>
+              <div class="btn-container">
+                <button id="get-loan-button">Get a loan</button>
+              </div>
             </section>
+
+            <section id="work" class="inner-container container-border-radius">
+              <h3>Work</h3>
+              <div class="text-container">
+                <p id="pay">Pay</p>
+                <p>0 Kr</p>
+              </div>
+              <div class="btn-container">
+                <button id="work-button">Work</button>
+                <button id="bank-button">Bank</button>
+                <button id="repay-loan-button">Repay Loan</button>
+              </div>
+            </section>
+            <section id="laptops" class="inner-container-3 container-border-radius">
+              <h3>Laptops</h3>
+              <fieldset>
+                <label for="laptop-select">Features</label>
+              </fieldset>
+              <select id="laptop-select"></select>
+              <ul id="laptop-features"></ul>
+            </section>
+          </div>
+          <section
+            id="laptop-info"
+          >
+            <!-- <h3>Laptop Information</h3> -->
+            <div class="img-container">
+              <img src="" id="laptop-image" alt="Laptop image" />
+            </div>
+            <div class="laptop-info-subtext">
+              <h2 id="laptop-title"></h2>
+              <p id="laptop-description"></p>
+            </div>
+            <div class="product-price">
+              <p id="laptop-price"></p>
+              <button id="buy-now-button" >Buy Now</button>
+            </div>
+          </section>
         </div>
-    </main>
+      </main>
+    </div>
     <script src="App.js"></script>
-</body>
+  </body>
 </html>

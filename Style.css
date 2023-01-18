@@ -1,104 +1,253 @@
-:root{
-    font-size: 16x;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  /* font size */
+  --logoSize: 1.8em;
+
+  --buttonSize: 1.01em;
+  /* font color */
+  --logoColor: white;
+
+  /* container color */
+
+  --headerContainer: #2b2b2b;
+
+  /* button color */
+
+  --buttonRadius: 1;
+
+  --workButton: white;
+
+  font-family: "Poppins", sans-serif;
 }
 
 /*----Main container----*/
-.container{
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 3rem;
-}
+/* .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 3rem;
+} */
 
 /*-----HEADER-----*/
-header{
-    background-color: aqua;
-    padding: 1rem;
-    margin-bottom: 3.5rem;
+
+header {
+  height: 10vh;
+  width: 100%;
+  background-color: var(--headerContainer);
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
-#logo{
-    color: blue;
-    font-size: 3rem;
+a {
+  text-decoration: none;
+  list-style: none;
 }
+
+a span {
+  font-weight: 100;
+  font-size: var(--logoSize);
+  color: var(--logoColor);
+}
+
+/* #logo {
+  color: blue;
+  font-size: 3rem;
+} */
 
 /*------MAIN-----*/
-main{
-    min-height: 90vh;
+main {
+  min-height: 90vh;
+  width: 100%;
 }
 
-section{
-    background-color: cadetblue;
-    border:2xp solid #ccc;
-    border-radius: 1rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-#bank, #work, #laptop-selection{
-    display: flex;
-    flex-flow: column nowrap;
-    width: 23%;
-    min-width: 250px;
-}
-.flex-container{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-.row{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    padding: 1rem 0;
+.main-container {
+  width: 100%;
+  min-height: 90vh;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid tomato;
 }
 
-.buttons-row{
-    display: flex;
-    flex-flow: row nowrap;
-    margin-top: auto;
-    justify-content: space-between;
+.flex-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-#bank h3, #work h3, #laptop-selection h3{
-    font-size: 1.2rem;
-    font-weight: 600;
+section {
+  min-height: 250px;
+  min-width: 250px;
+  background-color: #fafafa;
+  padding-left: 1.45rem;
+  padding-right: 1.45rem;
 }
 
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.inner-container-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.inner-container .text-container, .inner-container .subtext-container {
+  flex: 1;
+}
+
+.inner-container .btn-container {
+  flex: 1;
+}
+
+.inner-container h3,
+.inner-container-3 h1 {
+  flex: 0.5;
+  padding-top: 1rem;
+}
+
+.inner-container .text-container {
+  flex: 1;
+}
+
+.inner-container .btn-container {
+  flex: 1.5;
+}
+.text-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-container #work-button,
+.btn-container #bank-button,
+.btn-container #repay-loan-button {
+  padding: 0.6rem 1.8rem;
+}
+.btn-container #bank-button {
+  background-color: #ffea20;
+}
+
+.btn-container #work-button {
+  background-color: #3c79f5;
+  color: var(--workButton);
+}
+
+.btn-container #repay-loan-button {
+  color: white;
+  background-color: rgb(248, 115, 91);
+}
+
+.btn-container button {
+  font-weight: 100;
+  border: none;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.2);
+  font-size: var(--buttonSize);
+  border-radius: 5px;
+}
+
+.btn-container #get-loan-button {
+  width: 100%;
+  padding: 0.6rem 2.4rem;
+  background-color: #02ee9f;
+}
+
+.inner-container h1,
+.inner-container-3 h1 {
+  flex: 0.5;
+  padding-top: 1rem;
+}
+
+.inner-container .text-container {
+  flex: 1;
+}
+
+.inner-container .btn-container {
+  flex: 1.5;
+}
+
+.inner-container-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.inner-container-3 .select-container {
+  flex: 0.7;
+}
+
+.inner-container-3 .container-subtext {
+  flex: 1.8;
+  align-self: flex-start;
+}
+
+.inner-container-3 li {
+  list-style: none;
+  font-weight: 100;
+  font-size: 0.675em;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.buttons-row {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: auto;
+  justify-content: space-between;
+}
 
 #bank {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-  }
-  
-  #balance {
-    font-weight: bold;
-  }
-  
-  #outstanding-loan {
-    color: red;
-  }
-
-  #repay-loan-button {
-    display: none;
-  }
-  #repay-loan-button {
-    display: none;
-  }
-
-  /*---------laptop-selection-----*/
-#laptop-selection{
-    min-width: 30%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
 }
 
-fieldset{
-    border: 0;
+#balance {
+  font-weight: bold;
+}
+
+#outstanding-loan {
+  color: red;
+}
+
+#repay-loan-button {
+  display: none;
+}
+
+/*---------laptop-selection-----*/
+#laptop-selection {
+  min-width: 30%;
+}
+
+fieldset {
+  border: 0;
 }
 
 /* #laptop-selection {
@@ -106,117 +255,135 @@ fieldset{
     margin: 0 auto;
 } */
 #laptop-select {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 1rem 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-    
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
 }
 
-#laptop-selection p, #laptops-specs{
-    color: aquamarine;
+#laptop-selection p,
+#laptops-specs {
+  color: aquamarine;
 }
 
-#laptop-selection p{
-    font-weight: 500;
+#laptop-selection p {
+  font-weight: 500;
 }
 /* laptop information*/
-#laptop-info{
-    display: flex;
-    flex-flow: row nowrap;
+#laptop-info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row nowrap;
 }
 /* #laptop-info {
     width: 80%;
     margin: 0 auto;
     text-align: center;
 } */
-#laptop-image, #laptop-description, #buy-now-button {
-    display:flex;
-    flex-flow: column;
+
+.product-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#buy-now-button {
+  font-weight: 100;
+  border: none;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.2);
+  font-size: 1em;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.5rem 2.4rem;
+  background-color: #86e5ff;
+  margin-top: 1em;
+}
+#laptop-image,
+#laptop-description {
+  display: flex;
+  flex-flow: column;
 }
 
-#laptop-description{
-    flex:2;
+#laptop-description {
+  flex: 2;
 }
 
-#laptop-description, #buy-now-button{
-    text-align: center;
-    line-height: 1.2;
-    justify-content: center;
-    gap: 2rem;
-    align-items: center;
+#laptop-description h1 {
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+}
+#laptop-description p {
+  font-size: 1.5rem;
 }
 
-#laptop-description h1{
-    margin-bottom: 1rem;
-    font-size: 2.8rem;
-}
-#laptop-description p{
-    font-size: 1.5rem;
+#buy-now-button,
+#laptop-image {
+  flex: 1;
 }
 
-#buy-now-button, #laptop-image{
-    flex: 1; 
+#laptop-image {
+  margin: 0 auto;
+  width: 10rem;
+  height: 10rem;
 }
 
-#laptop-image{
-    margin: 0 auto;
-    width: 10rem;
-    height: 10rem;
-}
-
-#buy-now-button{
-    text-align: center;
-    font-weight: 300;
-    font-size: 1.5rem;
-}
 /*-----Footer------*/
-footer{
-    width: 100%;
-    background-color: #2B2D42;
-    color: #fff;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 1rem;
-}
+/* footer {
+  width: 100%;
+  background-color: #2b2d42;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem;
+} */
 
 /*------Utils-----*/
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 
 /*------Media queries----*/
-@media only screen and(max-width:810px){
-    #bank, #work{
-        width: 45%;
-    }
+@media only screen and(max-width:810px) {
+  #bank,
+  #work {
+    width: 45%;
+  }
 
-    #laptop-selection{
-        width: 100%;
-    }
+  #laptop-selection {
+    width: 100%;
+  }
 
-    #laptop-info{
-        flex-direction: column;
-    }
-    
-    #laptop-description{
-        margin: 2rem 0;
-    }
+  #laptop-info {
+    flex-direction: column;
+  }
 
-    #buy-now-button{
-        margin: 1rem 0;
-    }
+  #laptop-description {
+    margin: 2rem 0;
+  }
+
+  #buy-now-button {
+    margin: 1rem 0;
+  }
 }
 
-@media only screen and(max-width:600px){
-    .flex-container{
-        justify-content: center;
-    }
+@media only screen and(max-width:600px) {
+  .flex-container {
+    justify-content: center;
+  }
 
-    #bank, #work, #laptop-info{
-        width: 100%;
-    }
+  #bank,
+  #work,
+  #laptop-info {
+    width: 100%;
+  }
+}
+
+.container-border-radius {
+  border-radius: 15px;
 }

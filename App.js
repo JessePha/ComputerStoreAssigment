@@ -133,7 +133,7 @@ const handleSelector = (data, laptopSelect) => {
     laptopDescription.textContent = selectedLaptop.description;
 
     let laptopPrice = document.getElementById("laptop-price");
-    laptopPrice.textContent = selectedLaptop.price + "Sek";
+    laptopPrice.textContent = selectedLaptop.price + " Kr";
 
     buyBtnTrigger(data, selectedLaptop);
   });
